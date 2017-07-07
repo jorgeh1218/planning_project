@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog multiSelect="true" busy="{settings>/selectBusyStatus}" liveChange="handleSupplyDialogSearch" 
+	confirm="handleCloseSupplyDialog" cancel="handleCloseSupplyDialog" title="Agregar"	items="{data>/UX_supplies}">
+		<items>
+			<ColumnListItem>
+				<Text text="{data>NAME}"/>
+				<Text text="{data>DENSITY}"/>
+				<Text text="{data>HUMIDITY}"/>
+			</ColumnListItem>
+		</items>
+		<columns>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+				<header>
+					<Text text="Nombre"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+				<header>
+					<Text text="Densidad"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+				<header>
+					<Text text="Humedad"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

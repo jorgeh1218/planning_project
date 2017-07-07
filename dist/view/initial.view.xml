@@ -1,0 +1,13 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="PlanificadorAppv2.controller.initial">
+	<App>
+		<pages>
+			<Page busy="{settings>/farmBusyStatus}" title="Selección de Granja">
+				<content>
+					<TileContainer id="farms" allowAdd="false" editable="false" tiles="{data>/UX_farms}">
+						<StandardTile icon="sap-icon://factory" number="{data>BROILERSFARMID}" numberUnit="{i18n>titleFarm}" title="{i18n>centers}:{data>centers/length}" press="handlePress"/>
+					</TileContainer>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

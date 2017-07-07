@@ -1,0 +1,99 @@
+{
+	"farms": [{
+		"code": 1,
+		"nSheds": 2,
+		"capacity": 50000,
+		"status": "Error",
+		"info": "Pendiente",
+		"centers": [{
+			"code": 101,
+			"capacity": 23000,
+			"status": "Error",
+			"info": "Pendiente",
+			"sheds": [{
+				"code": 101,
+				"capacity": 2500,
+				"dateIn": "",
+				"quantity": "",
+				"dateOut": "",
+				"status": "No planificado",
+				"version": 1,
+				"supplies": [{
+					"supplyName": "Iniciador",
+					"supplyQuantity": 6000,
+					"supplyUnit": "Kg.",
+					"supplyDays": 3,
+					"supplyAge": 1,
+					"supplyDate": ""
+				}]
+			}, {
+				"code": 102,
+				"capacity": 2500,
+				"dateIn": "",
+				"quantity": "",
+				"dateOut": "",
+				"status": "No planificado",
+				"version": 1,
+				"supplies": [{
+
+				}]
+			}]
+		}, {
+			"code": 102,
+			"capacity": 27000,
+			"status": "Error",
+			"info": "Pendiente",
+			"sheds": [{
+				"code": 101,
+				"capacity": 2500,
+				"dateIn": "",
+				"quantity": "",
+				"dateOut": "",
+				"status": "No planificado",
+				"version": 1
+			}, {
+				"code": 102,
+				"capacity": 2500,
+				"dateIn": "",
+				"quantity": "",
+				"dateOut": "",
+				"status": "No planificado",
+				"version": 1,
+				"supplies": [{
+
+				}]
+			}]
+		}]
+
+	}],
+	"farmSelected": {
+
+	},
+	"centerSelected": {
+
+	},
+	"shedSelected": {
+
+	},
+	"supplyNameSelected":"Iniciador",
+	"supplies": [{
+		"supplyName": "Iniciador",
+		"supplyQuantity": 13,
+		"supplyDay": 1
+	},
+	{
+		"supplyName": "Iniciador",
+		"supplyQuantity": 27,
+		"supplyDay": 2
+	},
+	{
+		"supplyName": "Iniciador",
+		"supplyQuantity": 30,
+		"supplyDay": 3
+	},
+	{
+		"supplyName": "Iniciador",
+		"supplyQuantity": 25,
+		"supplyDay": 4
+	}]
+}

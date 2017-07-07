@@ -1,0 +1,66 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<VBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" direction="Column">
+		<items>
+			<Toolbar xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+				<content>
+					<SearchField id="sanitarySearchField" liveChange="onSanitarySearch" width="100%"/>
+				</content>
+			</Toolbar>
+			<Table xmlns:core="sap.ui.core" 
+			mode="MultiSelect" 
+			busy="{settings>/sanitaryPlanBusyStatus}" 
+			xmlns:mvc="sap.ui.core.mvc" 
+			xmlns:html="http://www.w3.org/1999/xhtml" 
+			xmlns:sap.m.semantic="sap.m.semantic"
+			xmlns="sap.m" 
+			id="sanitaryTable" 
+			items="{path: 'data>/UX_sanitaryStandards',   sorter:{path:'data>sort_intAge'}}">
+				<items>
+					<ColumnListItem type="DetailAndActive" detailPress="onEdit">
+						<cells>
+							<Text text="{data>NAME}"/>
+							<Text text="{data>sort_intAge}"/>
+							<ObjectNumber number="{path: 'data>QUANTITY'}"/>
+							<Text text="{data>PRESENTATION}"/>
+							<Text text="{data>medicalSupplyDOSE}"/>
+							
+							<!--<Text text="Fecha"/>-->
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column vAlign="Middle">
+						<header>
+							<Label text="Nombre"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Edad"/>
+						</header>
+					</Column>
+					<Column hAlign="Right" vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Cantidad"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" vAlign="Middle" demandPopin="false" minScreenWidth="Tablet">
+						<header>
+							<Label text="Unidad"/>
+						</header>
+					</Column>
+					<Column hAlign="Right" vAlign="Middle" demandPopin="false" minScreenWidth="Tablet">
+						<header>
+							<Label text="Contenido"/>
+						</header>
+					</Column>
+					<!--<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Fecha"/>
+						</header>
+					</Column>-->
+				</columns>
+			</Table>
+		</items>
+	</VBox>
+</core:FragmentDefinition>

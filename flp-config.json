@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "PlanificadorAppv2.PlanificadorAppv2",
+        "description": "Crear Planificaciones",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#PlanificadorAppv2-Display",
+        "navigationComponentName": "PlanificadorAppv2",
+        "intentSemanticObject": "PlanificadorAppv2",
+        "intentAction": "Display",
+        "html5ApplicationName": "planificadorappv2",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "08e0c73a-8055-4458-81aa-098fef331bd9-1485277469332"
+        ],
+        "contentPackages": [
+            "3f91e726-b6ee-43b5-8285-715c4ccb021f-1473173874375"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Planificaciones",
+        "subtitle": "Crear Planificaciones",
+        "searchKeywords": "Planificaciones,Crear Planificaciones",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

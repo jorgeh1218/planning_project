@@ -1,0 +1,64 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<VBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" direction="Column">
+		<items>
+			<Toolbar xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+				<content>
+					<SearchField id="housingSearchField" liveChange="onHousingSearch" width="100%"/>
+				</content>
+			</Toolbar>
+			<Table xmlns:core="sap.ui.core" 
+			mode="SingleSelectLeft"
+			busy= "{settings>/housingPlanBusyStatus}"
+			xmlns:mvc="sap.ui.core.mvc" 
+			xmlns:html="http://www.w3.org/1999/xhtml"
+			xmlns:sap.m.semantic="sap.m.semantic" 
+			xmlns="sap.m" 
+			id="planTable"
+			items="{path: 'data>/UX_housingPlan',   sorter:{path:'data>HOUSINGDATE'}}">
+				<items>
+					<ColumnListItem type="DetailAndActive" detailPress="onEdit">
+						<cells>
+							<Text text="{data>BROILERSLOTID}"/>
+							<Text text="{data>BROILERBREED/GENETICLINE}"/>
+							<Text text="{data>GENDER/NAME}"/>
+							<Text text="{path: 'data>HOUSINGDATE', formatter:'.Formatter.displayDate'}" />
+							<ObjectNumber number="{data>QUANTITYBIRDS}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+				<!--	<Column vAlign="Middle">
+						<header>
+							<Label text="Versión"/>
+						</header>
+					</Column>-->
+					<Column vAlign="Middle" demandPopin="false" minScreenWidth="Tablet">
+						<header>
+							<Label text="Lote"/>
+						</header>
+					</Column>
+					<Column vAlign="Middle" demandPopin="false" minScreenWidth="Tablet">
+						<header>
+							<Label text="Raza"/>
+						</header>
+					</Column>
+					<Column vAlign="Middle" demandPopin="false" minScreenWidth="Tablet">
+						<header>
+							<Label text="Género"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Fecha de Alojamiento"/>
+						</header>
+					</Column>
+					<Column hAlign="Right" vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Cantidad"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+		</items>
+	</VBox>
+</core:FragmentDefinition>

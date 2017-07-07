@@ -1,0 +1,64 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="PlanificadorAppv2.controller.main">
+	<Page title="Plan Sanitario" showNavButton="true" navButtonPress="goBack">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:Form id="FormToolbar" editable="true" ariaLabelledBy="Title1" >
+					<f:toolbar>
+						<Toolbar id="TB1">
+							<Title id="Title1" text="Editar" level="H4" titleStyle="H4"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+					</f:toolbar>
+					<f:layout>
+						<f:ResponsiveGridLayout/>
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer ariaLabelledBy="Title2">
+							<f:formElements>
+								<!--<f:FormElement label="Versión">
+									<f:fields>
+										<Input width="80%" enabled="false" value="{SupplierName}" id="version"/>
+									</f:fields>
+								</f:FormElement>-->
+								<f:FormElement label="Nombre">
+									<f:fields>
+										<Input enabled="false" width="80%" value="{ path: 'data>/INTERNAL_sanitarySelected/NAME'}" id="name"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Unidad">
+									<f:fields>
+										<Input enabled="false" width="80%" value="{ path: 'data>/INTERNAL_sanitarySelected/PRESENTATION'}" id="unit"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Contenido">
+									<f:fields>
+										<Input enabled="false" width="80%" value="{ path: 'data>/INTERNAL_sanitarySelected/medicalSupplyDOSE'}" id="dose"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Edad">
+									<f:fields>
+											<Input type="Number" width="80%" value="{ path: 'data>/INTERNAL_sanitarySelected/AGE'}" id="age"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Cantidad">
+									<f:fields>
+										<Input type="Number" width="80%" value="{ path: 'data>/INTERNAL_sanitarySelected/QUANTITY'}" id="quantity"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+		</content>
+		<footer>
+			<Bar id="__bar2">
+				<contentRight>
+					<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Confirmar"
+						width="auto" id="__buttonAccept2" type="Accept" press="confirmSanitary"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<VBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" direction="Column">
+		
+		<items>
+			<Toolbar xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+				<content>
+					<SearchField id="shedSearchField" liveChange="onShedSearch" width="100%"/>
+				</content>
+			</Toolbar>
+			<Table
+				xmlns:core="sap.ui.core"
+				xmlns:mvc="sap.ui.core.mvc"
+				xmlns:html="http://www.w3.org/1999/xhtml"
+				xmlns:sap.m.semantic="sap.m.semantic"
+				busy= "{settings>/shedBusyStatus}"
+				xmlns="sap.m"
+				id="shedTable"
+				items="{path: 'data>/UX_centerSelected/sheds',   sorter:{path:'data>SHEDCODE'}}">
+				<items>
+					<ColumnListItem type="Navigation" press="onPress">
+						<cells>
+							<Text text="{data>SHEDCODE}"/>
+							<Text text="{data>STALLLONGITUDE}mts"/>
+							<Text text="{data>STALLWIDTH}mts"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column vAlign="Middle" width="30%">
+						<header>
+							<Label text="Galpón"/>
+						</header>
+					</Column>
+					<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Largo"/>
+						</header>
+					</Column>
+					<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Ancho"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+		</items>
+	</VBox>
+</core:FragmentDefinition>

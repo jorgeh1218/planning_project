@@ -1,0 +1,56 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="PlanificadorAppv2.controller.main">
+	<Page showNavButton="true" title="Creación de Planificaciones" navButtonPress="goBackFarm">
+		<content>
+			<ObjectHeader title="{settings>/titleObjectHeader}" id="mainHeader" backgroundDesign="Solid" responsive="true">
+				<statuses>
+					<ObjectStatus id="statusHeader"/>
+				</statuses>
+			</ObjectHeader>
+			<IconTabBar select="selectedIconTab" id="tabBar" expandable="false" applyContentPadding="false">
+				<items>
+					<IconTabFilter text="Núcleo" id="centerFilter">
+						<content>
+							<core:Fragment fragmentName="PlanificadorAppv2.view.center-table" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabSeparator icon="sap-icon://open-command-field"/>
+					<IconTabFilter text="Galpón" id="shedFilter" enabled="{settings>/enabled-shed}">
+						<content>
+							<core:Fragment fragmentName="PlanificadorAppv2.view.shed-table" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabSeparator icon="sap-icon://open-command-field"/>
+					<IconTabFilter text="Alojamiento" id="planFilter" enabled="{settings>/enabled-plan}">
+						<content>
+							<core:Fragment fragmentName="PlanificadorAppv2.view.plan-table" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabSeparator icon="sap-icon://open-command-field"/>
+					<IconTabFilter text="Alimentación" id="supplyFilter" enabled="{settings>/enabled-supply}">
+						<content>
+							<core:Fragment fragmentName="PlanificadorAppv2.view.supply-plan-table" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabSeparator icon="sap-icon://open-command-field"/>
+					<IconTabFilter text="Sanitario" id="sanitaryFilter" enabled="{settings>/enabled-sanitary}">
+						<content>
+							<core:Fragment fragmentName="PlanificadorAppv2.view.sanitary-plan-table" type="XML"/>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Bar id="__bar0">
+				<contentLeft>
+					<Button xmlns:core="sap.ui.core" text="+" visible="{settings>/visibility-addButton}" width="auto" id="button2" type="Accept" press="onAdd"/>
+					<Button xmlns:core="sap.ui.core" text="x" visible="{settings>/visibility-eraseButton}" width="auto" id="button3" type="Reject" press="onDelete"/>
+				</contentLeft>
+				<contentRight>
+					<Button xmlns:core="sap.ui.core" visible="{settings>/visibility-nextButton}" text="Confirmar" width="auto" id="button1" type="Accept" press="onNext"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

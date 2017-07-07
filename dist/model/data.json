@@ -1,0 +1,57 @@
+{
+	"INTERNAL_housingSelected": {
+		"HOUSINGDATE": "",
+		"EVICTIONDATE": "",
+		"FIELD2": "",
+		"FIELD1": "",
+		"BROILERSLOTID": "",
+		"CONSUMPTIONSTANDARDID": "",
+		"QUANTITYBIRDS": "",
+		"COMPLIANCESTATUSID": "52",
+		"EXECUTIONSTATUSID": "52",
+		"SHEDID": "",
+		"BROILERBREED": {
+			"ID": "",
+			"GENETICLINE": ""
+		},
+		"GENDER": {
+			"ID": "",
+			"NAME": "",
+			"TEXT": ""
+		}
+	},
+	"INTERNAL_supplySelected": "",
+	"INTERNAL_supplyElementSelectedPath": "",
+	"INTERNAL_supplyStandardSelected": "",
+	"INTERNAL_sanitarySelected": "",
+	"INTERNAL_sanitarySelectedPath": "",
+	"INTERNAL_housingSelectedPath": "",
+	"INTERNAL_shedSelected": "",
+	"INTERNAL_lotCreated": "",
+	"INTERNAL_breedgenderList": {
+		"valueBreed": "0",
+		"valueGender": "0",
+		"UX_gendersList": "",
+		"UX_breedsList": ""
+	},
+	"INTERNAL_UNITS":
+	{
+		"TON":"Tn"	
+	},
+	"UX_farms": "",
+	"UX_farmSelected": "",
+	"UX_centerSelected": "",
+	"UX_supplyPlan": "",
+	"UX_sanitaryStandards": "",
+	"UX_housingPlan": "",
+	"UX_supplies": "",
+	"UX_vaccines": "",
+
+	"SERVICE_supplyStandards": "",
+	"SERVICE_broilersLot": "",
+
+	"density": {
+		"initial": 17,
+		"final": 12.5
+	}
+}

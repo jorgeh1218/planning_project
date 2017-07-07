@@ -1,0 +1,74 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="PlanificadorAppv2.controller.main">
+	<Page title="Plan de Alojamiento" showNavButton="true" navButtonPress="goBack">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:Form id="FormToolbar" editable="true" ariaLabelledBy="Title1" >
+					<f:toolbar>
+						<Toolbar id="TB1">
+							<Title id="Title1" text="{settings>/titleForm}" level="H4" titleStyle="H4"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+					</f:toolbar>
+					<f:layout>
+						<f:ResponsiveGridLayout/>
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer ariaLabelledBy="Title2">
+							<f:formElements>
+								<!--<f:FormElement label="Versión">
+									<f:fields>
+										<Input width="80%" enabled="false" value="{SupplierName}" id="version"/>
+									</f:fields>
+								</f:FormElement>-->
+								<f:FormElement label="Raza">
+									<f:fields>
+										<Select busy="{settings>/selectBusyStatus}" width="80%" change="onSelectBreedChange"
+										 items="{data>/INTERNAL_breedgenderList/UX_breedsList}" selectedKey="{data>/INTERNAL_breedgenderList/valueBreed}"
+										 id="breed">
+											<core:Item key="{data>BROILERBREEDID}" text="{data>GENETICLINE} "/>
+										</Select>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Género">
+									<f:fields>
+										<Select busy="{settings>/selectBusyStatus}" width="80%" change="onSelectGenderChange"
+										  items="{data>/INTERNAL_breedgenderList/UX_gendersList}" selectedKey="{data>/INTERNAL_breedgenderList/valueGender}" 
+										  id="gender">
+											<core:Item key="{data>GENDERID}" text="{data>NAME} "/>
+										</Select>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Alojamiento">
+									<f:fields>
+										<DatePicker id="dateHousing" change="onChangeHousingDate"  valueFormat="yyyy-MM-dd" width="80%"
+											value="{data>/INTERNAL_housingSelected/HOUSINGDATE}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Desalojo">
+									<f:fields>
+										<DatePicker id="dateEviction" width="80%"  valueFormat="yyyy-MM-dd" enabled="false" 
+											value="{data>/INTERNAL_housingSelected/EVICTIONDATE}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Cantidad">
+									<f:fields>
+										<Input type="Number" width="80%" value="{data>/INTERNAL_housingSelected/QUANTITYBIRDS}" id="quantity"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+		</content>
+		<footer>
+			<Bar id="__bar2">
+				<contentRight>
+					<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Confirmar"
+						width="auto" id="__buttonAccept" type="Accept" press="confirmHousing"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

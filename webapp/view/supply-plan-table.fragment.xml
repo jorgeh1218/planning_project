@@ -1,0 +1,80 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+	<VBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" direction="Column">
+		<items>
+			<f:SimpleForm id="formSupplies" editable="true" breakpointL="1024" breakpointM="600" breakpointXL="1440" backgroundDesign="Solid"
+				layout="ResponsiveGridLayout">
+				<f:content>
+					<Toolbar xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+						<content>
+							<SearchField busy="{settings>/searchSupplyBusyStatus}" search="searchSupplyStandard" id="supplySearchField" width="40%"
+								placeholder="Seleccionar Plan de Consumo..." enabled="{settings>/enabled-searchSupply}" enableSuggestions="true" suggest="onSuggest"
+								suggestionItems="{data>/SERVICE_supplyStandards}">
+								<suggestionItems>
+									<SuggestionItem id="suggestionItem" text="{data>UX_Identifier}" key="{data>UX_Key}"/>
+								</suggestionItems>
+							</SearchField>
+						</content>
+					</Toolbar>
+					<Table xmlns:core="sap.ui.core" busy="{settings>/supplyPlanBusyStatus}" xmlns:mvc="sap.ui.core.mvc"
+						xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.m.semantic="sap.m.semantic" xmlns="sap.m" id="supplyTable"
+						items="{path: 'data>/UX_supplyPlan/details', sorter:{path:'data>sort_intAge'}}" mode="MultiSelect">
+						<items>
+							<ColumnListItem type="DetailAndActive" detailPress="onEdit">
+								<cells>
+									<Text text="{data>Name}"/>
+									<Text text="{data>sort_intAge}"/>
+									<Text text="{data>Days}"/>
+									<ObjectNumber
+										number="{ parts:[{path:'data>Total'},{path:'data>/CURRENCY'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
+										unit="{data>Unit}"/>
+									<!--	<Text text="{data>Unit}"/>-->
+									<ObjectNumber
+										number="{ parts:[{path:'data>TotalMultiplied'},{path:'data>/CURRENCY'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
+										unit="{data>/INTERNAL_UNITS/TON}"/>
+									<!--<Text text="Fecha"/>-->
+								</cells>
+							</ColumnListItem>
+						</items>
+						<columns>
+							<Column vAlign="Middle">
+								<header>
+									<Label text="Nombre"/>
+								</header>
+							</Column>
+							<Column hAlign="Center" vAlign="Middle" demandPopin="false" minScreenWidth="Tablet">
+								<header>
+									<Label text="Edad"/>
+								</header>
+							</Column>
+							<Column hAlign="Center" vAlign="Middle" demandPopin="false" minScreenWidth="Tablet">
+								<header>
+									<Label text="Días"/>
+								</header>
+							</Column>
+							<Column hAlign="Right" demandPopin="false" minScreenWidth="Tablet">
+								<header>
+									<Label text="Cantidad"/>
+								</header>
+							</Column>
+							<!--<Column hAlign="Center" vAlign="Middle" demandPopin="false" minScreenWidth="Tablet">
+								<header>
+									<Label text="Unidad"/>
+								</header>
+							</Column>-->
+							<Column hAlign="Right" demandPopin="true" minScreenWidth="Tablet">
+								<header>
+									<Label text="Total"/>
+								</header>
+							</Column>
+							<!--	<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+						<header>
+							<Label text="Fecha"/>
+						</header>
+					</Column>-->
+						</columns>
+					</Table>
+				</f:content>
+			</f:SimpleForm>
+		</items>
+	</VBox>
+</core:FragmentDefinition>

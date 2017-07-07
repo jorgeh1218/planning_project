@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog multiSelect="true" busy="{settings>/selectBusyStatus}" liveChange="handleSanitaryDialogSearch" 
+	confirm="handleCloseSanitaryDialog" cancel="handleCloseSanitaryDialog" title="Agregar"	items="{data>/UX_vaccines}">
+		<items>
+			<ColumnListItem>
+				<Text text="{data>NAME}"/>
+				<Text text="{data>PRESENTATION}"/>
+				<Text text="{data>medicalSupplyDOSE}"/>
+			</ColumnListItem>
+		</items>
+		<columns>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+				<header>
+					<Text text="Nombre"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+				<header>
+					<Text text="Unidad"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+				<header>
+					<Text text="Contenido"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

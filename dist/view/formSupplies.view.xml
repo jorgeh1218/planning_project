@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="PlanificadorAppv2.controller.main">
+	<Page title="Plan de Alimentación" showNavButton="true" navButtonPress="goBack">
+		<content>
+			<Panel>
+				<headerToolbar>
+						<Toolbar id="TB1">
+							<Title id="Title1" text="Editar: {data>/supplySelected/Name}" level="H4" titleStyle="H4"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+				</headerToolbar> 
+				<content>
+						<Table xmlns:core="sap.ui.core" mode="MultiSelect" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" 
+						xmlns:sap.m.semantic="sap.m.semantic" items="{data>/INTERNAL_supplySelected/supplies}" xmlns="sap.m" id="supplyElements">
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Input type="Number" value="{data>supplyDay}"/>
+										<Input type="Number" value="{data>supplyQuantity}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							<columns>
+								<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+									<header>
+										<Label text="Edad"/>
+									</header>
+								</Column>
+								<Column vAlign="Middle" demandPopin="true" minScreenWidth="Tablet">
+									<header>
+										<Label text="Consumo Diario (gr.)"/>
+									</header>
+								</Column>
+							</columns>
+						</Table>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar id="__bar1">
+				<contentLeft>
+					<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+						xmlns:html="http://www.w3.org/1999/xhtml" text="+" width="auto" id="__buttonAdd2" type="Accept" press="addSupplyElements"/>
+					<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"
+						xmlns:html="http://www.w3.org/1999/xhtml" text="X" width="auto" id="__buttonDelete2" type="Reject" press="deleteSupplyElements"/>
+					
+				</contentLeft>
+				<contentRight>
+					<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+						xmlns:html="http://www.w3.org/1999/xhtml" text="Confirmar" width="auto" id="__button1" type="Accept" press="confirmSupplies"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

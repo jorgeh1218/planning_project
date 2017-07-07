@@ -1,0 +1,96 @@
+{
+    "resources": [
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "model/tiles.json"
+        },
+        {
+            "name": "model/data.json"
+        },
+        {
+            "name": "model/settings.json"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "i18n/i18n_es.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "controller/main.controller.js"
+        },
+        {
+            "name": "controller/initial.controller.js"
+        },
+        {
+            "name": "controller/Utilities.js"
+        },
+        {
+            "name": "controller/Formatter.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "view/formSupplies.view.xml"
+        },
+        {
+            "name": "view/sanitaryDialog.fragment.xml"
+        },
+        {
+            "name": "view/supply-plan-table.fragment.xml"
+        },
+        {
+            "name": "view/supplyDialog.fragment.xml"
+        },
+        {
+            "name": "view/initial.view.xml"
+        },
+        {
+            "name": "view/shed-table.fragment.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/dialog.fragment.xml"
+        },
+        {
+            "name": "view/plan-table.fragment.xml"
+        },
+        {
+            "name": "view/sanitary-plan-table.fragment.xml"
+        },
+        {
+            "name": "view/main.view.xml"
+        },
+        {
+            "name": "view/formSanitary.view.xml"
+        },
+        {
+            "name": "view/form.view.xml"
+        },
+        {
+            "name": "view/center-table.fragment.xml"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}
